@@ -17,7 +17,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome
             CaptionHeight="80"
-            GlassFrameThickness="-1"
+            GlassFrameThickness="1"
             UseAeroCaptionButtons="False" />
     </WindowChrome.WindowChrome>
 
@@ -78,7 +78,7 @@
                         </Grid.RowDefinitions>
                         <DockPanel Margin="5,0,5,20">
                             <TextBlock
-                                VerticalAlignment="Center"
+                                VerticalAlignment="Bottom"
                                 DockPanel.Dock="Right"
                                 WindowChrome.IsHitTestVisibleInChrome="True">
                                 <Hyperlink NavigateUri="https://github.com/CrazyZhang666/L4D2FontLoader" RequestNavigate="Hyperlink_RequestNavigate">

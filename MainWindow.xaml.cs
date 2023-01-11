@@ -14,6 +14,7 @@ namespace L4D2FontLoader
     public partial class MainWindow : Window
     {
         private const string fontINIPath = ".\\MacType\\L4D2.ini";
+        private const string macLoaderPath = ".\\MacType\\MacLoader.exe";
 
         public MainWindow()
         {
@@ -28,7 +29,7 @@ namespace L4D2FontLoader
             TextBox_CustomFontName.Text = IniHelper.ReadValue("Main", "CustomFontName");
 
             if (string.IsNullOrWhiteSpace(TextBox_L4D2RunArgs.Text))
-                TextBox_L4D2RunArgs.Text = "-steam -language schinese";
+                TextBox_L4D2RunArgs.Text = "-steam -novid -language schinese";
             if (string.IsNullOrWhiteSpace(TextBox_CustomFontName.Text))
                 TextBox_CustomFontName.Text = "楷体";
         }
@@ -87,7 +88,7 @@ namespace L4D2FontLoader
 
             if (!File.Exists(execPath))
             {
-                TextBlock_Logger.Text = "警告：求生之路2主程序文件不存在";
+                TextBlock_Logger.Text = "警告：求生之路2主程序文件不存在或路径输入错误";
                 TextBlock_Logger.Foreground = Brushes.Orange;
                 return;
             }
@@ -97,7 +98,7 @@ namespace L4D2FontLoader
                 WriteCustonFontName(fontName);
 
                 var process = new Process();
-                process.StartInfo.FileName = execPath;
+                process.StartInfo.FileName = macLoaderPath;
                 process.StartInfo.Arguments = $"\"{execPath}\" {runArgs}";
                 process.StartInfo.UseShellExecute = false;
                 process.Start();
