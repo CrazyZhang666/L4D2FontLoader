@@ -167,7 +167,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Cursor" Value="No" />
+                                <Setter Property="Cursor" Value="Hand" />
                                 <Setter TargetName="border" Property="Opacity" Value="0.9" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
