@@ -31,38 +31,35 @@
                 <Grid>
                     <Button
                         Name="Button_CloseWindow"
-                        Margin="5,5,10,5"
+                        Margin="10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                        Background="Transparent"
                         Click="Button_CloseWindow_Click"
-                        Content="╳"
-                        FontSize="18"
-                        Foreground="#788A92"
                         WindowChrome.IsHitTestVisibleInChrome="True">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
+                                <Setter Property="OverridesDefaultStyle" Value="True" />
+                                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                <Setter Property="Foreground" Value="#AFADAD" />
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="{x:Type Button}">
                                             <Border
                                                 x:Name="border"
+                                                Padding="3"
                                                 Background="Transparent"
-                                                BorderBrush="Transparent"
-                                                BorderThickness="0"
                                                 SnapsToDevicePixels="true">
-                                                <ContentPresenter
-                                                    x:Name="contentPresenter"
-                                                    Margin="{TemplateBinding Padding}"
-                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                    Focusable="False"
-                                                    RecognizesAccessKey="True"
-                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                                <Path
+                                                    x:Name="path"
+                                                    Data="M0,0 L12,12 M12,0 L0,12"
+                                                    Fill="Transparent"
+                                                    SnapsToDevicePixels="True"
+                                                    Stroke="{TemplateBinding Foreground}"
+                                                    StrokeThickness="1.2" />
                                             </Border>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="true">
-                                                    <Setter TargetName="border" Property="TextElement.Foreground" Value="#FFFFFF" />
+                                                    <Setter Property="Foreground" Value="#FFFFFF" />
                                                 </Trigger>
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
@@ -130,6 +127,9 @@
                             <Trigger Property="IsKeyboardFocused" Value="true">
                                 <Setter TargetName="border" Property="Background" Value="#373C44" />
                             </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#7A7A7A" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -167,11 +167,15 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Cursor" Value="No" />
                                 <Setter TargetName="border" Property="Opacity" Value="0.9" />
-                                <Setter Property="Cursor" Value="Hand" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter TargetName="border" Property="Opacity" Value="0.8" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#CCCCCC" />
+                                <Setter Property="Foreground" Value="#7A7A7A" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

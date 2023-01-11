@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Text;
 using System.Runtime.InteropServices;
 
 namespace L4D2FontLoader
@@ -16,15 +15,6 @@ namespace L4D2FontLoader
 
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
-
-        /// <summary>
-        /// 创建INI配置文件
-        /// </summary>
-        public static void Create()
-        {
-            if (!File.Exists(IniPath))
-                File.Create(IniPath).Close();
-        }
 
         /// <summary>
         /// 读取节点值

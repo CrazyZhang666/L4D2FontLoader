@@ -23,6 +23,19 @@ namespace L4D2FontLoader
 
         private void Window_Main_Loaded(object sender, RoutedEventArgs e)
         {
+            Button_RunL4D2WithArgs.IsEnabled = false;
+
+            if (!CheckEnv())
+            {
+                TextBox_L4D2ExecPath.IsEnabled = false;
+                TextBox_L4D2RunArgs.IsEnabled = false;
+                TextBox_CustomFontName.IsEnabled = false;
+
+                TextBlock_Logger.Text = "错误：工具运行文件损坏或丢失，请前往GitHub重新下载";
+                TextBlock_Logger.Foreground = Brushes.Red;
+                return;
+            }
+
             // 读取对应配置文件
             TextBox_L4D2ExecPath.Text = IniHelper.ReadValue("Main", "L4D2ExecPath");
             TextBox_L4D2RunArgs.Text = IniHelper.ReadValue("Main", "L4D2RunArgs");
@@ -32,6 +45,8 @@ namespace L4D2FontLoader
                 TextBox_L4D2RunArgs.Text = "-steam -novid -language schinese";
             if (string.IsNullOrWhiteSpace(TextBox_CustomFontName.Text))
                 TextBox_CustomFontName.Text = "楷体";
+
+            Button_RunL4D2WithArgs.IsEnabled = true;
         }
 
         private void Window_Main_Closing(object sender, CancelEventArgs e)
@@ -39,6 +54,26 @@ namespace L4D2FontLoader
             IniHelper.WriteValue("Main", "L4D2ExecPath", TextBox_L4D2ExecPath.Text.Trim());
             IniHelper.WriteValue("Main", "L4D2RunArgs", TextBox_L4D2RunArgs.Text.Trim());
             IniHelper.WriteValue("Main", "CustomFontName", TextBox_CustomFontName.Text.Trim());
+        }
+
+        private bool CheckEnv()
+        {
+            if (!File.Exists(".\\MacType\\EasyHK32.dll"))
+                return false;
+            if (!File.Exists(".\\MacType\\L4D2.ini"))
+                return false;
+            if (!File.Exists(".\\MacType\\MacLoader.exe"))
+                return false;
+            if (!File.Exists(".\\MacType\\MacType.Core.dll"))
+                return false;
+            if (!File.Exists(".\\MacType\\MacType.dll"))
+                return false;
+            if (!File.Exists(".\\MacType\\MacType.ini"))
+                return false;
+            if (!File.Exists(".\\MacType\\UserParams.ini"))
+                return false;
+
+            return true;
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
