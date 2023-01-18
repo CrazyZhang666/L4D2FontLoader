@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="Window_Main"
-    Title="求生之路2自定义字体加载器"
+    Title="求生之路2 中文字体加载器"
     Width="700"
     Height="500"
     Closing="Window_Main_Closing"
@@ -16,7 +16,7 @@
 
     <WindowChrome.WindowChrome>
         <WindowChrome
-            CaptionHeight="80"
+            CaptionHeight="100"
             GlassFrameThickness="1"
             UseAeroCaptionButtons="False" />
     </WindowChrome.WindowChrome>
@@ -68,12 +68,12 @@
                             </Style>
                         </Button.Style>
                     </Button>
-                    <Grid Margin="30">
+                    <Grid Margin="20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <DockPanel Margin="5,0,5,20">
+                        <DockPanel Margin="5,0,5,10">
                             <TextBlock
                                 VerticalAlignment="Bottom"
                                 DockPanel.Dock="Right"
@@ -82,9 +82,12 @@
                                     GitHub
                                 </Hyperlink>
                             </TextBlock>
+                            <Image Height="70" Source="l4d2.png" />
                             <TextBlock
+                                Margin="20,0,0,0"
+                                VerticalAlignment="Center"
                                 DockPanel.Dock="Left"
-                                FontSize="26"
+                                FontSize="24"
                                 Foreground="#FFFFFF"
                                 Text="{TemplateBinding Title}" />
                         </DockPanel>
@@ -201,7 +204,7 @@
                 Margin="5,5,5,15"
                 InputLanguageManager.InputLanguage="en-US"
                 InputMethod.IsInputMethodEnabled="False"
-                Text="-novid -num_edicts 8192 +exec autoexec" />
+                Text="D:\Steam\steamapps\common\Left 4 Dead 2\left4dead2.exe" />
             <!--  //////////////  -->
             <TextBlock
                 Margin="5"
@@ -213,7 +216,7 @@
                 Margin="5,5,5,15"
                 InputLanguageManager.InputLanguage="en-US"
                 InputMethod.IsInputMethodEnabled="False"
-                Text="-steam -novid -num_edicts 8192 +exec autoexec" />
+                Text="-steam -novid -language schinese" />
             <!--  //////////////  -->
             <TextBlock
                 Margin="5"
@@ -223,9 +226,7 @@
             <TextBox
                 x:Name="TextBox_CustomFontName"
                 Margin="5,5,5,15"
-                InputLanguageManager.InputLanguage="en-US"
-                InputMethod.IsInputMethodEnabled="False"
-                Text="-steam -novid -num_edicts 8192 +exec autoexec" />
+                Text="楷体" />
         </StackPanel>
         <!--  ////////////////////////////  -->
         <StackPanel Grid.Row="1">

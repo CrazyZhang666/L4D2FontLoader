@@ -106,5 +106,8 @@
   <ItemGroup>
     <Resource Include="l4d2.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="l4d2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
