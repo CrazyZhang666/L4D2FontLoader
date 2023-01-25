@@ -41,8 +41,8 @@ namespace L4D2FontLoader
             TextBox_L4D2RunArgs.Text = IniHelper.ReadValue("Main", "L4D2RunArgs");
             TextBox_CustomFontName.Text = IniHelper.ReadValue("Main", "CustomFontName");
 
-            if (string.IsNullOrWhiteSpace(TextBox_L4D2RunArgs.Text))
-                TextBox_L4D2RunArgs.Text = "-steam -novid -language schinese";
+            //if (string.IsNullOrWhiteSpace(TextBox_L4D2RunArgs.Text))
+            //    TextBox_L4D2RunArgs.Text = "-steam -novid -language schinese";
             if (string.IsNullOrWhiteSpace(TextBox_CustomFontName.Text))
                 TextBox_CustomFontName.Text = "楷体";
 
@@ -107,12 +107,12 @@ namespace L4D2FontLoader
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(runArgs))
-            {
-                TextBlock_Logger.Text = "警告：求生之路2运行参数不能为空";
-                TextBlock_Logger.Foreground = Brushes.Orange;
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(runArgs))
+            //{
+            //    TextBlock_Logger.Text = "警告：求生之路2运行参数不能为空";
+            //    TextBlock_Logger.Foreground = Brushes.Orange;
+            //    return;
+            //}
 
             if (string.IsNullOrWhiteSpace(fontName))
             {
