@@ -1,6 +1,6 @@
-# 求生之路2自定义字体加载器
+# 求生之路2 中文字体加载器
 
-方便玩家使用自定义字体替换求生之路2默认的宋体，方法来源：https://www.bilibili.com/video/BV19T4y1h7vx
+方便玩家使用自定义中文字体替换求生之路2默认的宋体（无法替换英文字体），方法来源：https://www.bilibili.com/video/BV19T4y1h7vx
 
 # 教程
 
@@ -10,11 +10,11 @@
 
 ![image](https://user-images.githubusercontent.com/28080853/211886890-6ba79015-2dcc-408e-b052-70dbd56283e9.png)
 
-![image](https://user-images.githubusercontent.com/28080853/211887042-0ba88780-8786-4793-97a2-7099979cb283.png)
+![image](https://user-images.githubusercontent.com/28080853/213100360-25c2cc67-8cab-43ab-aef5-6c432859c112.png)
 
 # 预览
 
-![image](https://user-images.githubusercontent.com/28080853/211883900-c04e9416-d8b7-4f81-8fb6-4132c47a4dc3.png)
+![image](https://user-images.githubusercontent.com/28080853/213100270-2366d0fa-21aa-436c-93df-d6a8907f4e4a.png)
 
 # 鸣谢
 
